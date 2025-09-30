@@ -23,4 +23,20 @@ void create()
     week[i].activity = (char*)malloc(100*size of(char));
     printf("Enter the name of the day %d",i+1);
     scanf("%s",week[i].name);
-  }}
+    printf("Enter the date of the day %d",i+1);
+    scanf("%d",week[i].date);
+    printf("Enter the activity for day %d",i+1);
+    getchar();
+    fgets(week[i].activity,100,stdlin);
+  }
+  void read()
+{
+  create();
+}
+  void display()
+{
+  printf("\nDay\tDate\tActivity\n");
+  for(int i=0;i<7;i++)
+    printf("%s\t%d|t%s",week[i].day,week[i].date,week[i].activity);
+}
+}
