@@ -1,5 +1,5 @@
 class Operations{
-public Static void mia(String[] args){
+public Static void mian(String[] args){
   
 }
 }
