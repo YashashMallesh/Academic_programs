@@ -14,7 +14,7 @@ void stringmatch()
             {
                 flag=1;
                 for(k=0;rep[k]!='\0';k++)
-                    ans[k]=rep[k];
+                    ans[j]=rep[k];
         i=0;
         c=m;
             }
