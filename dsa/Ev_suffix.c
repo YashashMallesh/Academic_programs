@@ -26,7 +26,7 @@ void main()
     {
       symb = postfix[i];
       if(isdigit(symb))
-        push(symb-'\0')
+        push(symb-'0')
       else
           {
             op2 = pop();
@@ -44,7 +44,7 @@ void main()
                 case'%':push(op1%op2);
                         break;
                 case'$'
-                case'^':push(pow(op1op2));
+                case'^':push(pow(op1,op2));
                         break;
                 default:push(0);
               }
