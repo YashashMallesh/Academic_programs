@@ -74,4 +74,47 @@ NODE* read_poly(NODE *head)
     }
   return head;
 }
+NODE* add_poly(NODE *h1,NODE *h2,NODE *h3)
+{
+ NODE *p1,*p2;
+ int x1,x2,y1,y2,z1,z2,cf1,cf2,cf;
+ p1=h1->link;
+ while(p1!=h1)
+  {
+   x1=p1->px;
+   y1=p1->py;
+   z1=p1->pz;
+   cf1=p1->cf;
+   p2=h2->link;
+  }
+ while(p2!=h2)
+  {
+   x2=p2->px;
+   y2=p2->py;
+   z2=p2->pz
+   cf2=p2->cf;
+   if(x1==x2&&y1==y2&&z1==z2)
+    break;
+   p2=p2->link;
+  }
+ if(p2!=h2)
+ {
+  cf=cf1+cf2;
+  p2->flag=1;
+  if(cf!=0)
+   h3=insert_rear(cf,x1,y1=1,h3)
+ }
+  else
+  h3=insert_rear(cf1,x1,y1,z1,h3)
+  p1=p1->link;
 }
+p2=p2->link;
+while(p2!=h2)
+ {
+  if(p2->flag==0)
+   h3=insert_rear(p2->cf,p2->px,p2->py,p2->pz,h3)
+  p2=p2->link;
+ }
+return h3;
+}
+
