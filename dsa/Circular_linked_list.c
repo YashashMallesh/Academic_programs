@@ -117,4 +117,64 @@ while(p2!=h2)
  }
 return h3;
 }
-
+void evaluate()
+{
+ NODE *head;
+ int x,y,z;
+ float result=0.0;
+ head=h1;
+ printf("\nEnter x,y,z terms to evaluate");
+ scanf("%d %d %d",&x,&y,&z);
+ while(h1->link!=head)
+  {
+   result=result+(h1->cf*pow(x,h1->px)*pow(y,h1->py)*pow(z,h1->pz));
+   h1=h1->link;
+  }
+ result=result+(h1->cf*pow(x,h1->px)*pow(y,h1->py)*pow(z,h1->pz));
+ printf("\nPolynomial result is %f",result);
+}
+void main()
+{
+ NODE *h1,*x,*y,*z;
+ int ch;
+ clrscr();
+ h1=getnode();
+ x=getnode();
+ y=getnode();
+ z=getnode();
+ h1->link=h1;
+ x->link=x;
+ y->link=y;
+ z->link=z;
+ while(1)
+  {
+   printf("\n1.Evaluate Polynomial \n2.Add two polynomial \n3.Exit\n");
+   printf("Enter your choice:");
+   scanf("%d",&ch);
+   switch(ch)
+    {
+     case 1:printf("\nEnter polynomial to evaluate:\n");
+            h1=read_poly(h1);
+            display(h1);
+            evaluate(h1);
+            break;
+     case 2:printf("\nEnter first polynomial:");
+            x=read_poly(x);
+            printf("\nEnter second Polynomial:");
+            y=read_poly(y);
+            z=add_poly(x,y,z);
+            printf("\nFirst Polynomial");
+            display(x);
+            printf("\nSecond Polynomial");
+            display(y);
+            printf("\nThe sum of two polynomials: ");
+            display(z);
+            break;
+     case 3:exit(0);
+            break;
+     default:printf("\nInvalid Entry\n");
+             break;
+    }
+   getch();
+  }
+}
