@@ -1,15 +1,17 @@
 #include<stdio.h>
-#include<calloc.h>
+#include<stdlib.h>
 #include<math.h>
-struct Node
+struct node
 {
 int cf,px,py,pz;
 int flag;
 struct node *link;
+struct node *head;
 };
 typedef struct node NODE;
-NODE* getnode();
+NODE* getnode()
 {
+NODE *p; 
 p=(NODE*)malloc(sizeof(NODE));
 if(p==NULL)
 {
@@ -18,7 +20,7 @@ printf("\nInsufficient Memory");
 }
   return p;
 }
-void display()
+void display(NODE *head)
 {
 NODE *temp;
   if(head->link==head)
@@ -42,9 +44,9 @@ NODE* insert_rear(int cf,int x,int y,int z,NODE *head)
   NODE *temp, *cur;
   temp=getnode();
   temp->cf=cf;
-  temp->px=px;
-  temp->py=py;
-  temp->pz=pz;
+  temp->px=x;
+  temp->py=y;
+  temp->pz=z;
   cur=head->link;
   while(cur->link!=head)
       cur=cur->link;
@@ -86,7 +88,7 @@ NODE* add_poly(NODE *h1,NODE *h2,NODE *h3)
    z1=p1->pz;
    cf1=p1->cf;
    p2=h2->link;
-  }
+  
  while(p2!=h2)
   {
    x2=p2->px;
@@ -102,7 +104,7 @@ NODE* add_poly(NODE *h1,NODE *h2,NODE *h3)
   cf=cf1+cf2;
   p2->flag=1;
   if(cf!=0)
-   h3=insert_rear(cf,x1,y1=1,h3)
+   h3=insert_rear(cf,x1,y1=1,z1,h3)
  }
   else
   h3=insert_rear(cf1,x1,y1,z1,h3)
@@ -117,7 +119,7 @@ while(p2!=h2)
  }
 return h3;
 }
-void evaluate()
+void evaluate(NODE *h1)
 {
  NODE *head;
  int x,y,z;
@@ -137,7 +139,6 @@ void main()
 {
  NODE *h1,*x,*y,*z;
  int ch;
- clrscr();
  h1=getnode();
  x=getnode();
  y=getnode();
@@ -175,6 +176,5 @@ void main()
      default:printf("\nInvalid Entry\n");
              break;
     }
-   getch();
   }
 }
