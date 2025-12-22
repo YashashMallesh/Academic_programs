@@ -1,10 +1,10 @@
-import.java.util.Scanner;
+import java.util.Scanner;
 class Stack{
   private int arr[];
   private int top,size;
   Stack()
   {
-    arr=newint[10];
+    arr=new int[10];
     top=-1;
     size=5;
   }
@@ -30,28 +30,29 @@ class Stack{
   }
   public void printStack()
   {
-    for(int==0;i<=top;i++)
-      System.out.ptintln(arr[i]+"");
+    for(int i=0; i<=top; i++)
+      System.out.println(arr[i]+"");
   }
 }
 public class DemoStack
 {
-  public Static void main(String[] args)
+  public static void main(String[] args)
   {
     int ch;
     Stack s1=new Stack();
-    while(True)
+    while(true)
       {
         System.out.println("Enter your choice \n 1. Push \n 2. POP \n 3. Display \n 4. Exit");
-        Scanner Scan=new Scanner();
+        Scanner Scan = new Scanner();
         ch=Scan.nextInt();
-        Switch(ch)
+        switch(ch)
         {
           case 1: System.out.println("Enter Element");
                   int ele=Scan.nextInt();
                   s1.push(ele);
                   break;
-          case 2: System.out.println("Popped Element is %d",s1.pop());
+          case 2: System.out.println("Popped Element is ");
+                  s1.pop();
                   break;
           case 3: s1.printStack();
                   break;
@@ -59,6 +60,6 @@ public class DemoStack
           default: System.out.println("Wrong open");
         }
       }
-Scan.close()
+Scan.close();
   }
 }
