@@ -20,3 +20,17 @@ else{
     printf("Hash table full\n");
 }
 }
+int main(){
+int a[MAX],num,i;
+  printf("Collision handled by linear probing");
+  for(i=0;i<MAX;a[i++]=-1)
+    do{
+        printf("Enter the data");
+        scanf("%d",&num);
+        linear_prob(a,num,mod(num));
+        printf("Do u wish to continue(0/1)");
+        scanf("%d",&i);
+    }while(1);
+display(a);
+  return 0;
+}
