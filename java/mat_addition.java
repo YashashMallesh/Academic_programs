@@ -5,6 +5,7 @@ public clas matrix_add
     {
   Scanner scan = new Scanner(System.in);
     int N = Integer.parseInt(args[0]);
+    System.out.println("Matrix Addition program......");
     System.out.println("The value of N: "+N);
     int[][] a = new int[10][10];
     int[][] b = new int[10][10];
