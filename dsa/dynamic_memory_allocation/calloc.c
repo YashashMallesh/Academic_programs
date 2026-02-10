@@ -6,7 +6,7 @@ void main()
   int i,n;
   printf("Enter the no. of integers:\n");
   scanf("%d",&n);
-  ptr = (int*)malloc(n*sizeof(int));
+  ptr = (int*)calloc(n*sizeof(int));
   if(ptr==NULL)
   {
     printf("Memory not allocated");
