@@ -1,0 +1,10 @@
+Euclid(m,n)
+//Computes gcd(m,n) by Euclid's Algorithm
+//I/P:Two non negative, not both zero ints m & n
+//O/P:GCD
+
+while n!=0
+  r <- m&n
+  m <- n
+  n <- r
+return m
