@@ -1,0 +1,21 @@
+create user c##filename;
+identified by password;
+grant resource, connect to c##filename;
+grant unlimited tablespace to c##filename;
+grant create view to c##filename;
+connect c##filename/password;
+
+create table Emp(Empno number(3), Ename varchar(15), Job varchar(10), Mno(3), sal number(10,2));
+insert into Emp values(1,'Job','Manager',NULL,5000,1000);
+insert into Emp valueS(2,'Smith','Dev',1,4000,NULL);
+insert into Emp values(3,'Richard','CEO',NULL,5000,1000);
+select * from Emp;
+desc Emp;
+delete * from Emp;
+rollback;
+Select * from Emp;
+commit;
+delete * from Emp;
+select * from Emp;
+rollback;
+select * from Emp;
