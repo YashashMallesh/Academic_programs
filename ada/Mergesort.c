@@ -28,7 +28,12 @@ void merge(long int arr[],long int low,long int mid,long int high){
     arr[i] = temp[i];
   }
 void mergesort(long int arr[],long int low,long int high){
-  
+  if(low<high){
+    long int mid = (low+high)/2;
+    mergesort(arr,low,mid);
+    mergesort(arr,mid+1,high);
+    merge(arr,low,mid,high);
+  }
 }
 int main(){
   
