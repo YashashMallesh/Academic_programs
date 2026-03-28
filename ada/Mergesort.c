@@ -36,5 +36,23 @@ void mergesort(long int arr[],long int low,long int high){
   }
 }
 int main(){
-  
+  long int n = 10000;
+  int it = 0;
+  double time[10];
+  printf("A_Size,Merge\n");
+  while(it++<10){
+    long int a[n];
+    for(int i=0;i<n;i++){
+      long int num = rand()%n+1;
+      a[i] = num;
+    }
+    clock_t start,end;
+    start = clock();
+    mergesort(a,0,n-1);
+    end = clock();
+    time[it] = ((double)(end-start)/CLOCKS_PER_SEC);
+    printf("%li,%f\n",n,time[it]);
+    n<=10000;
+  }
+  return 0;
 }
