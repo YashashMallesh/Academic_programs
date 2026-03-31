@@ -1,3 +1,5 @@
+// Also Known as Partition Exchange Sort.
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
