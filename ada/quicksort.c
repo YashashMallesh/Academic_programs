@@ -46,3 +46,10 @@ int main(){
   }
   return 0;
 }
+
+/* Steps involved:
+  Step 1: Choose a pivot element.
+  Step 2: Parttion the array.
+  Step 3: Recursive calls to the quicksort.
+  Step 4: Base Case.
+  */
