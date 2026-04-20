@@ -56,3 +56,5 @@ int main(){
   }
   return 0;
 }
+
+//Uses Dividde and conquer technique for sorting the array.
