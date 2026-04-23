@@ -1,4 +1,10 @@
 //Directed Acyclic Graph. Uses DFS for soring elements.
+/* Linear ordering of vertices such that if there is an edge bw u&v, u appears befor v in that ordering.
+Note down the nodes adjacent to the node we are visiting.
+Insert the nodes we are visiting at the top of the stack.
+If the top has all the adjacent nodes visited and there are no adjacent nodes to visit pop the top of the stack
+After popping all the elements note down the resulting sorted list*/
+
 #include<stdio.h>
 int temp[10],k=0;
 void sort(int a[][10],int id[],int n){
@@ -37,11 +43,3 @@ void main(){
    printf("%d",&temp[i]);
  }
 }
-
-
-
-/* Linear ordering of vertices such that if there is an edge bw u&v, u appears befor v in that ordering.
-Note down the nodes adjacent to the node we are visiting.
-Insert the nodes we are visiting at the top of the stack.
-If the top has all the adjacent nodes visited and there are no adjacent nodes to visit pop the top of the stack
-After popping all the elements note down the resulting sorted list*/
