@@ -1,4 +1,10 @@
 // Also Known as Partition Exchange Sort.
+/* Steps involved:
+  Step 1: Choose a pivot element.
+  Step 2: Parttion the array.
+  Step 3: Recursive calls to the quicksort.
+  Step 4: Base Case.
+  */
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -48,10 +54,3 @@ int main(){
   }
   return 0;
 }
-
-/* Steps involved:
-  Step 1: Choose a pivot element.
-  Step 2: Parttion the array.
-  Step 3: Recursive calls to the quicksort.
-  Step 4: Base Case.
-  */
