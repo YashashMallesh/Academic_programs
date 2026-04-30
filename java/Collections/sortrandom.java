@@ -1,3 +1,5 @@
+//Sorts random numbers from 10 to 100 in tens place.
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
