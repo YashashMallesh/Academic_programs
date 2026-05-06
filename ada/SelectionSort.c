@@ -1,3 +1,6 @@
+/*It divides the array into a sorted and an unsorted part.
+It repeatedly finds the minimum element from the unsorted part and swaps it with the first element of that part.*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
