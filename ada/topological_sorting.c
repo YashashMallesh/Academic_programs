@@ -22,7 +22,11 @@ void sort(int a[][10],int id[],int n){
  }
 }
 /*It loops through all vertices to find a node with an in-degree of 0 (id[i] == 0). 
-A node with 0 in-degree has no dependencies and can be "processed."*/
+A node with 0 in-degree has no dependencies and can be "processed."
+Once found, it marks the node as visited by setting id[i] = -1 and adds it to the temp array (the result list).
+It then "removes" this node from the graph by looking at all other nodes j. 
+If there was an edge from i to j (a[i][j] == 1), it decrements the in-degree of j (id[j]--).
+The loop resets (i = 0) to find the next available node that now has an in-degree of 0.*/
 void main(){
  int a[10][10],id[10],n,i,j;
  printf("\nEnter the n value:");
