@@ -21,7 +21,7 @@ void sort(int a[][10],int id[],int n){
   }
  }
 }
-/*t loops through all vertices to find a node with an in-degree of 0 (id[i] == 0). 
+/*It loops through all vertices to find a node with an in-degree of 0 (id[i] == 0). 
 A node with 0 in-degree has no dependencies and can be "processed."*/
 void main(){
  int a[10][10],id[10],n,i,j;
