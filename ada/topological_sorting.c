@@ -1,4 +1,4 @@
-//Directed Acyclic Graph. Uses DFS for soring elements.
+// Uses DFS for soring elements.
 /* Linear ordering of vertices such that if there is an edge bw u&v, u appears befor v in that ordering.
 Note down the nodes adjacent to the node we are visiting.
 Insert the nodes we are visiting at the top of the stack.
