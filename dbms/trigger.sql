@@ -12,12 +12,17 @@ diff number(3);
 begin
 if inserting then
 dbms_output.put_line("New record inserted");
-dbms_output.put_line();
+dbms_output.put_line("id: "||:new.id ||"name: "||:new.name ||"age: "||:new.age ||"address: "||:new.address ||"salary: "||:new.sal);
 
 elsif updating then
   oldsal:= :old.sal;
   newsal:= :new.sal;
   diff:= newsal-oldsal;
+dbms_output.put_line("Salary updated for id: "||:new.id ||"Old salary: "||:old.sal ||"New salary: "||:new.sal ||"Difference= "||diff);
+
+elsif deleting then
+  dbms_output.put_line("Record deleted for id: "||:old.id ||"Name: "||:old.name ||"age: "||:old.age ||"address: "||:old.address ||"salary: "||:old.sal);
+
 endif;
 end;
 /
