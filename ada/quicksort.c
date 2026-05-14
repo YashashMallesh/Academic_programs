@@ -54,3 +54,23 @@ int main(){
   }
   return 0;
 }
+
+/*1. The Core Logic: Partitioning
+The partition function is the "brain" of the algorithm. Its goal is to take a portion of the array and organize it around a pivot element.
+
+Pivot Selection: In this code, the pivot is chosen as the last element: arr[high].
+
+Reordering: It iterates through the array and moves every element smaller than or equal to the pivot to the left side.
+
+The Result: After partitioning, the pivot is placed in its final, sorted position. Everything to its left is smaller, and everything to its right is larger.
+
+2. The Recursive Strategy
+The quicksort function handles the "divide" part:
+
+It calls partition to find the correct spot for a pivot (let's call this index pi).
+
+It then recursively calls itself for the "left" subarray (elements from low to pi - 1).
+
+It recursively calls itself for the "right" subarray (elements from pi + 1 to high).
+
+Base Case: The recursion stops when low is no longer less than high (meaning the subarray has one or zero elements).*/
