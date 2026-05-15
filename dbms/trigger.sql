@@ -26,3 +26,6 @@ elsif deleting then
 endif;
 end;
 /
+
+
+set server on;
