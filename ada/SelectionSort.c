@@ -5,7 +5,7 @@ It repeatedly finds the minimum element from the unsorted part and swaps it with
 #include<stdlib.h>
 #include<time.h>
 void swap(long int *a,long int *b){
-int *temp = a;
+int temp = *a;
 *a = *b;
 *b = temp;  
 }
