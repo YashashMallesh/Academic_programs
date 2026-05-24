@@ -1,8 +1,8 @@
 // Also Known as Partition Exchange Sort.
 /* Steps involved:
-  Step 1: Choose a pivot element.
-  Step 2: Parttion the array.
-  Step 3: Recursive calls to the quicksort.
+  Step 1: Choose a pivot element. The code picks the last element as the pivot: long int pivot = arr[high];
+  Step 2: Parttion the array. It scans the array from low to high. Any element smaller than or equal to the pivot is swapped to the left side using a tracking index i. Finally, the pivot is swapped into its correct sorted position (i + 1).
+  Step 3: Recursive calls to the quicksort. The algorithm recursively sorts the left subarray (elements before the pivot) and the right subarray (elements after the pivot).
   Step 4: Base Case.
   */
 
@@ -50,7 +50,7 @@ int main(){
     end = clock();
     time[it] = ((double)(end-start)/CLOCKS_PER_SEC);
     printf("%li,%f\n",n,time[it]);
-    n<=10000;
+    n+=10000;
   }
   return 0;
 }
@@ -74,3 +74,10 @@ It then recursively calls itself for the "left" subarray (elements from low to p
 It recursively calls itself for the "right" subarray (elements from pi + 1 to high).
 
 Base Case: The recursion stops when low is no longer less than high (meaning the subarray has one or zero elements).*/
+/*Best Case {O}(n log n) Balanced partitions. The pivot always lands exactly in the middle, splitting the array into two equal halves at every step.
+Average Case {O}(n log n) 
+Typical random array distributions where the split is reasonably balanced.
+Worst Case{O}(n^2)
+
+Commercial Standard Libraries:
+Virtual Memory / RAM-Constrained Environments*/
