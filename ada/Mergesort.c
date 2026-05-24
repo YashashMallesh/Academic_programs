@@ -6,7 +6,7 @@ void merge(long int arr[],long int low,long int mid,long int high){
   long int k = low;
   long int i = low;
   long int j = mid+1;
-  long int temp[100000];
+  long int temp[10];
   while(i<=mid && j<=high){
     if(arr[i]<=arr[j]){
       temp[k] = arr[i];
@@ -52,9 +52,20 @@ int main(){
     end = clock();
     time[it] = ((double)(end-start)/CLOCKS_PER_SEC);
     printf("%li,%f\n",n,time[it]);
-    n<=10000;
+    n+=10000;
   }
   return 0;
 }
 
 //Uses Dividde and conquer technique for sorting the array.
+/*mergesort(arr, low, high) (The Divide Step): It finds the middle point mid = (low + high) / 2 to split the array into two halves. It then recursively calls itself to sort the left half (low to mid) and the right half (mid + 1 to high).
+
+merge(arr, low, mid, high) (The Conquer & Combine Step): This is where the actual sorting happens.
+It takes two pre-sorted sub-arrays and merges them into a single sorted sequence using a temporary auxiliary array (temp[100000]).
+It compares elements from both halves one by one and copies the smaller element into temp. Finally, it copies the sorted elements back into the original array.
+Best Case O(n log n) Even if the array is already sorted, the algorithm still splits it entirely and executes all merge steps.
+Average Case O(n log n) Typical behavior on randomized datasets.
+Worst Case O(n log n)
+Inversion Counting:
+External Sorting:
+E-Commerce and Data Presentation.*/
