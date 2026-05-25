@@ -6,7 +6,7 @@ void merge(long int arr[],long int low,long int mid,long int high){
   long int k = low;
   long int i = low;
   long int j = mid+1;
-  long int temp[10];
+  long int temp[high+1];
   while(i<=mid && j<=high){
     if(arr[i]<=arr[j]){
       temp[k] = arr[i];
@@ -22,6 +22,11 @@ void merge(long int arr[],long int low,long int mid,long int high){
   while(i<=mid){
     temp[k]  = arr[i];
     i++;
+    k++;
+  }
+  while(j<=high){
+    temp[k] = arr[j];
+    j++;
     k++;
   }
   for(i=low;i<=high;i++)
