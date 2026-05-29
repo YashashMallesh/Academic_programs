@@ -35,7 +35,7 @@ int main(){
     SelectSort(a,n);
     end = clock();
     time[iteration] = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("%li,%li",n,(long int)time[iteration]);
+    printf("%li %f",n,time[iteration]);
     n+=500;
   }
   return 0;
