@@ -10,51 +10,49 @@
 #include<stdlib.h>
 #include<time.h>
 void swap(long int *a,long int *b){
-  long int tmp = *a;
-  *a = *b;
-  *b = tmp;
+    long int temp = *a;
+    *a = *b;
+    *b = temp;
 }
-long int partition(long int arr[],long int low,long int high){
-  long int pivot = arr[high];
-  long int i = low-1;
-  for(long int j=low;j<=high-1;j++){
-    if(arr[j]<=pivot){
-      i++;
-      swap(&arr[i],&arr[j]);
+int partition(long int a[],long int low,long int high){
+    long int i = low-1;
+    long int pivot = a[high];
+    for(long int j=low;j<high;j++){
+        if(a[j]<=pivot){
+            i++;
+            swap(&a[i],&a[j]);
+        }
     }
-  }
-  swap(&arr[i+1],&arr[high]);
-  return(i+1);
+    swap(&a[i+1],&a[high]);
+    return(i+1);
 }
-void quicksort(long int arr[],long int low,long int high){
-  if(low<high){
-    long int pi = partition(arr,low,high);
-    quicksort(arr,low,pi-1);
-    quicksort(arr,pi+1,high);
-  }
+void quick(long int a[],long int low,long int high){
+    if(low<high){
+        long int pi = partition(a,low,high);
+        quick(a,low,pi-1);
+        quick(a,pi+1,high);
+    }
 }
 int main(){
-  long int n = 10000;
-  int it = 0;
-  double time[10];
-  printf("A_Size,Quick\n");
-  while(it++<10){
-    long int a[n];
-    for(int i=0;i<n;i++){
-      long int num = rand()%n+1;
-      a[i] = num;
+    long int n = 5000;
+    double time[10000];
+    int iteration = 0;
+    printf("A_Size,Quick Sort\n");
+    while(iteration++<10){
+        long int a[n+1];
+        for(int i=0;i<n;i++){
+            long int num = rand()%n+1;
+            num = a[i];
+        }
+        clock_t start,end;
+        start = clock();
+        quick(a,0,n-1);
+        end = clock();
+        time[iteration] = ((double)(end-start))/CLOCKS_PER_SEC;
+        printf("%li,%f\n",n,time[iteration]);
     }
-    clock_t start,end;
-    start = clock();
-    quicksort(a,0,n-1);
-    end = clock();
-    time[it] = ((double)(end-start)/CLOCKS_PER_SEC);
-    printf("%li,%f\n",n,time[it]);
-    n+=10000;
-  }
-  return 0;
+    return 0;
 }
-
 /*1. The Core Logic: Partitioning
 The partition function is the "brain" of the algorithm. Its goal is to take a portion of the array and organize it around a pivot element.
 
