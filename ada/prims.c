@@ -63,9 +63,9 @@ void prims(int n, int a[10][10]){
         printf("Spanning tree does not exist");
     }
     else{
-        printf("Edge %d Spanning tree exists and minimum spanning tree is\n",k);
+        printf("Spanning tree exists and minimum spanning tree is\n");
         for(i = 0; i < n - 1; i++){
-            printf("%d->%d\n", t[i][0], t[i][1]);
+            printf("Edge %d %d->%d\n", k, t[i][0], t[i][1]);
         }
         printf("The cost of the spanning tree = %d\n", sum);
     }
