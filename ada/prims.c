@@ -63,7 +63,7 @@ void prims(int n, int a[10][10]){
         printf("Spanning tree does not exist");
     }
     else{
-        printf("Spanning tree exists and minimum spanning tree is\n");
+        printf("Edge %d Spanning tree exists and minimum spanning tree is\n",k);
         for(i = 0; i < n - 1; i++){
             printf("%d->%d\n", t[i][0], t[i][1]);
         }
