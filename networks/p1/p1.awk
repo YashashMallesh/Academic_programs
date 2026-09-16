@@ -1,9 +1,18 @@
-BEGIN{ c=0;}
+BEGIN{
+dcount = 0;
+rcount = 0;
+}
 {
-if($1= ="d")
-{ c++;
-printf("%s\t%s\n",$5,$11);
+event = $1;
+if(event == "d"){
+dcount++;
+}
+if(event == "r"){
+rcount++;
 }
 }
-END{ printf("The number of packets dropped is %d\n",c); }
+END{
+printf("No.of packets dropped:%d \n",dcount);
+printf("No.of packets recieved:%d \n",rcount);
+}
 
