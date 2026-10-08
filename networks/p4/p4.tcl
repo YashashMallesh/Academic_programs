@@ -55,7 +55,7 @@ set ftp2 [new Application/FTP]
 $ftp2 attach-agent $tcp2
 set tfile2 [open p4_2.tr w]
 $tcp2 attach $tfile2
-$tcp2 trace crwnd_
+$tcp2 trace cwnd_
 $ns at 0.5 "$ftp1 start"
 $ns at 1.0 "$ftp2 start"
 $ns at 5.0 "$ftp2 stop"
